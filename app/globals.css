@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light mode — dark charcoal + red */
+    --background:          0 0% 8%;
+    --foreground:          0 0% 95%;
+    --card:                0 0% 11%;
+    --card-foreground:     0 0% 95%;
+    --popover:             0 0% 11%;
+    --popover-foreground:  0 0% 95%;
+    --primary:             0 84% 55%;
+    --primary-foreground:  0 0% 100%;
+    --secondary:           0 0% 15%;
+    --secondary-foreground:0 0% 95%;
+    --muted:               0 0% 15%;
+    --muted-foreground:    0 0% 55%;
+    --accent:              0 84% 55%;
+    --accent-foreground:   0 0% 100%;
+    --destructive:         0 84% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border:              0 0% 17%;
+    --input:               0 0% 17%;
+    --ring:                0 84% 55%;
+    --radius:              0.75rem;
+
+    /* Sidebar */
+    --sidebar:             0 0% 6%;
+    --sidebar-foreground:  0 0% 80%;
+    --sidebar-muted:       0 0% 35%;
+    --sidebar-accent:      0 0% 12%;
+
+    /* Semantic */
+    --success:             142 76% 36%;
+    --success-foreground:  0 0% 100%;
+    --success-muted:       142 30% 10%;
+    --warning:             38 92% 50%;
+    --warning-foreground:  30 100% 20%;
+    --warning-muted:       38 30% 10%;
+  }
+
+  .dark {
+    --background:          0 0% 5%;
+    --foreground:          0 0% 95%;
+    --card:                0 0% 8%;
+    --card-foreground:     0 0% 95%;
+    --popover:             0 0% 8%;
+    --popover-foreground:  0 0% 95%;
+    --primary:             0 84% 55%;
+    --primary-foreground:  0 0% 100%;
+    --secondary:           0 0% 12%;
+    --secondary-foreground:0 0% 95%;
+    --muted:               0 0% 12%;
+    --muted-foreground:    0 0% 52%;
+    --accent:              0 84% 55%;
+    --accent-foreground:   0 0% 100%;
+    --destructive:         0 84% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border:              0 0% 14%;
+    --input:               0 0% 14%;
+    --ring:                0 84% 55%;
+
+    --sidebar:             0 0% 4%;
+    --sidebar-foreground:  0 0% 78%;
+    --sidebar-muted:       0 0% 32%;
+    --sidebar-accent:      0 0% 9%;
+
+    --success-muted:       142 30% 9%;
+    --warning-muted:       38 30% 9%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Prose styles for markdown content */
+@layer components {
+  .prose-em h2 { @apply text-lg font-bold text-foreground mt-4 mb-2; }
+  .prose-em h3 { @apply text-base font-semibold text-foreground mt-3 mb-1.5; }
+  .prose-em p  { @apply text-sm text-foreground/85 leading-relaxed mb-2; }
+  .prose-em ul { @apply text-sm text-foreground/85 list-disc list-inside mb-2 space-y-1; }
+  .prose-em strong { @apply font-semibold text-foreground; }
+}
