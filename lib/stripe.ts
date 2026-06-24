@@ -1,7 +1,8 @@
 import Stripe from 'stripe'
 
+// apiVersion omitted intentionally — the installed stripe-node SDK pins its own
+// supported version, which avoids a literal-type mismatch on minor SDK bumps.
 export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2024-12-18.acacia',
   typescript: true,
 })
 

@@ -1,7 +1,8 @@
 import { createServerClient } from '@/lib/supabase/server'
+import type { User as AuthUser } from '@supabase/supabase-js'
 import type { User } from '@/types'
 
-export async function getCurrentUser(): Promise<{ auth: any; profile: User | null }> {
+export async function getCurrentUser(): Promise<{ auth: AuthUser | null; profile: User | null }> {
   const supabase = await createServerClient()
   const { data: { user: auth } } = await supabase.auth.getUser()
   if (!auth) return { auth: null, profile: null }

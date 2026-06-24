@@ -1,6 +1,9 @@
 import { MetadataRoute } from 'next'
 import { createServerClient } from '@/lib/supabase/server'
 
+// Reads live job data via Supabase (cookies) — must not run at build time.
+export const dynamic = 'force-dynamic'
+
 const BASE_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'https://em-stat.com'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
