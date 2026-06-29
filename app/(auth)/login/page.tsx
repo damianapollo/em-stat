@@ -71,7 +71,7 @@ function LoginForm() {
     return (
       <Card className="w-full max-w-sm">
         <CardHeader className="text-center">
-          <div className="text-4xl mb-2">??</div>
+          <div className="text-4xl mb-2">&#128236;</div>
           <CardTitle>Check your email</CardTitle>
           <CardDescription>We sent a magic link to <strong>{email}</strong>. Click it to sign in.</CardDescription>
         </CardHeader>
@@ -131,7 +131,7 @@ function LoginForm() {
             </div>
             <div className="space-y-1.5">
               <Label htmlFor="password">Password</Label>
-              <Input id="password" type="password" placeholder="••••••••" value={password} onChange={e => setPassword(e.target.value)} required autoComplete="current-password" />
+              <Input id="password" type="password" placeholder="password" value={password} onChange={e => setPassword(e.target.value)} required autoComplete="current-password" />
             </div>
             {error && <p className="text-xs text-destructive">{error}</p>}
             <Button type="submit" className="w-full" disabled={loading || !email || !password}>
@@ -151,7 +151,7 @@ function LoginForm() {
             </div>
             <div className="space-y-1.5">
               <Label htmlFor="password-su">Password</Label>
-              <Input id="password-su" type="password" placeholder="••••••••" value={password} onChange={e => setPassword(e.target.value)} required autoComplete="new-password" />
+              <Input id="password-su" type="password" placeholder="password" value={password} onChange={e => setPassword(e.target.value)} required autoComplete="new-password" />
             </div>
             {error && <p className="text-xs text-destructive">{error}</p>}
             <Button type="submit" className="w-full" disabled={loading || !email || !password}>
